@@ -1,0 +1,1324 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avío – Consumibles para hostelería en Ponteareas y O Porriño</title>
+  <meta name="description" content="Reposición de consumibles profesionales para bares, cafeterías y restaurantes en Ponteareas, O Porriño y alrededores. Pedido fácil por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde: #1a6b3a;
+      --verde-claro: #e8f5ee;
+      --verde-medio: #2d9151;
+      --negro: #111827;
+      --gris-oscuro: #374151;
+      --gris: #6b7280;
+      --gris-claro: #f3f4f6;
+      --blanco: #ffffff;
+      --borde: #e5e7eb;
+      --whatsapp: #25d366;
+      --whatsapp-hover: #1ebe5d;
+      --radio: 12px;
+      --sombra: 0 4px 24px rgba(0,0,0,0.08);
+      --sombra-hover: 0 8px 32px rgba(0,0,0,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--negro);
+      background: var(--blanco);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--verde);
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--negro); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gris-oscuro);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--verde); }
+    .nav-cta {
+      background: var(--whatsapp);
+      color: var(--blanco) !important;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--whatsapp-hover) !important; color: var(--blanco) !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0f4a28 0%, #1a6b3a 60%, #2d9151 100%);
+      color: var(--blanco);
+      padding: 100px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--blanco);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #86efac;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    }
+    .btn-wa:hover { background: var(--whatsapp-hover); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.2); }
+    .hero-trust {
+      margin-top: 48px;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+    .trust-item svg { opacity: 0.9; }
+
+    /* SECTIONS */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--verde);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--negro);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gris);
+      max-width: 540px;
+      margin-bottom: 48px;
+    }
+
+    /* PACKS */
+    .packs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .pack-card {
+      background: var(--blanco);
+      border: 1.5px solid var(--borde);
+      border-radius: var(--radio);
+      padding: 32px;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .pack-card:hover {
+      box-shadow: var(--sombra-hover);
+      transform: translateY(-3px);
+      border-color: var(--verde);
+    }
+    .pack-card.featured {
+      border-color: var(--verde);
+      background: var(--verde-claro);
+    }
+    .pack-badge {
+      position: absolute;
+      top: -12px;
+      left: 24px;
+      background: var(--verde);
+      color: var(--blanco);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .pack-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--verde-claro);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    .pack-card.featured .pack-icon { background: rgba(255,255,255,0.6); }
+    .pack-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--negro);
+      margin-bottom: 8px;
+    }
+    .pack-desc {
+      font-size: 0.9rem;
+      color: var(--gris);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .pack-items {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .pack-items li {
+      font-size: 0.88rem;
+      color: var(--gris-oscuro);
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pack-items li::before {
+      content: '✓';
+      color: var(--verde);
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .pack-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .pack-price .amount {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--verde);
+      letter-spacing: -1px;
+    }
+    .pack-price .suffix {
+      font-size: 0.85rem;
+      color: var(--gris);
+      font-weight: 500;
+    }
+    .pack-price .desde {
+      font-size: 0.8rem;
+      color: var(--gris);
+      font-weight: 500;
+    }
+    .btn-pack {
+      display: block;
+      text-align: center;
+      background: var(--negro);
+      color: var(--blanco);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-pack:hover { background: var(--verde); }
+    .pack-card.featured .btn-pack { background: var(--verde); }
+    .pack-card.featured .btn-pack:hover { background: #0f4a28; }
+
+    /* OFERTA ESPECIAL */
+    .oferta-banner {
+      background: linear-gradient(90deg, #0f4a28, #1a6b3a);
+      border-radius: var(--radio);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .oferta-texto h3 {
+      color: var(--blanco);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .oferta-texto p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+    }
+    .oferta-texto p strong { color: #86efac; }
+
+    /* CATALOGO Y CARRITO */
+    .catalogo { background: #fbfdfc; }
+    .catalogo-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 28px;
+      align-items: start;
+    }
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .producto-card {
+      background: var(--blanco);
+      border: 1.5px solid var(--borde);
+      border-radius: var(--radio);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 245px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .producto-card:hover {
+      border-color: var(--verde);
+      box-shadow: var(--sombra);
+      transform: translateY(-2px);
+    }
+    .producto-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .producto-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--verde-claro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .producto-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--verde);
+      background: var(--verde-claro);
+      border: 1px solid #bfe4ca;
+      border-radius: 999px;
+      padding: 4px 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+    .producto-card h3 {
+      font-size: 1rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      color: var(--negro);
+    }
+    .producto-card p {
+      color: var(--gris);
+      font-size: 0.84rem;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .producto-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      margin-bottom: 14px;
+    }
+    .producto-precio {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--verde);
+    }
+    .producto-unidad {
+      color: var(--gris);
+      font-size: 0.78rem;
+      text-align: right;
+    }
+    .qty-row {
+      display: grid;
+      grid-template-columns: 38px 1fr 38px;
+      gap: 8px;
+      align-items: center;
+    }
+    .qty-row button,
+    .qty-inline button {
+      border: none;
+      background: var(--negro);
+      color: var(--blanco);
+      height: 38px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .qty-row button:hover,
+    .qty-inline button:hover { background: var(--verde); }
+    .qty-row input {
+      text-align: center;
+      padding: 9px 8px;
+      font-weight: 700;
+    }
+    .cart-panel {
+      position: sticky;
+      top: 88px;
+      background: var(--blanco);
+      border: 1.5px solid var(--borde);
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      padding: 22px;
+    }
+    .cart-panel h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+    .cart-help {
+      color: var(--gris);
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+      line-height: 1.45;
+    }
+    .cart-items {
+      display: grid;
+      gap: 12px;
+      max-height: 300px;
+      overflow: auto;
+      margin-bottom: 16px;
+      padding-right: 4px;
+    }
+    .cart-empty {
+      color: var(--gris);
+      background: var(--gris-claro);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .cart-item {
+      border-bottom: 1px solid var(--borde);
+      padding-bottom: 12px;
+    }
+    .cart-item:last-child { border-bottom: none; }
+    .cart-item-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+    .cart-item-name {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--negro);
+    }
+    .cart-item-price {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--verde);
+      white-space: nowrap;
+    }
+    .qty-inline {
+      display: grid;
+      grid-template-columns: 34px 42px 34px;
+      gap: 6px;
+      align-items: center;
+      width: max-content;
+    }
+    .qty-inline button {
+      height: 30px;
+      font-size: 0.9rem;
+      border-radius: 7px;
+    }
+    .qty-inline span {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .cart-total {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1.5px solid var(--borde);
+      padding-top: 14px;
+      margin-bottom: 14px;
+    }
+    .cart-total span:first-child {
+      color: var(--gris);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .cart-total strong {
+      font-size: 1.45rem;
+      color: var(--verde);
+    }
+    .monthly-box {
+      background: var(--verde-claro);
+      border: 1.5px solid #bfe4ca;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+    .monthly-box label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 0;
+      cursor: pointer;
+      color: var(--negro);
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+    .monthly-box input {
+      width: auto;
+      margin-top: 3px;
+      accent-color: var(--verde);
+      flex-shrink: 0;
+    }
+    .cart-note {
+      font-size: 0.75rem;
+      color: var(--gris);
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+    .btn-cart {
+      width: 100%;
+      border: none;
+      background: var(--whatsapp);
+      color: var(--blanco);
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 13px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .btn-cart:hover { background: var(--whatsapp-hover); }
+    .btn-cart:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    /* CÓMO FUNCIONA */
+    .como-funciona { background: var(--gris-claro); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+    .step {
+      text-align: center;
+      padding: 8px;
+    }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: var(--verde);
+      color: var(--blanco);
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--negro);
+    }
+    .step p {
+      font-size: 0.875rem;
+      color: var(--gris);
+    }
+
+    /* ZONA */
+    .zona-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .zona-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .zona-tag {
+      background: var(--verde-claro);
+      color: var(--verde);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1.5px solid #a7d9b8;
+    }
+    .zona-tag.consulta {
+      background: var(--gris-claro);
+      color: var(--gris);
+      border-color: var(--borde);
+      font-weight: 500;
+    }
+    .zona-map {
+      background: var(--verde-claro);
+      border-radius: var(--radio);
+      padding: 48px;
+      text-align: center;
+      border: 1.5px solid #a7d9b8;
+    }
+    .zona-map .map-icon { font-size: 4rem; margin-bottom: 16px; }
+    .zona-map p { font-size: 0.9rem; color: var(--gris-oscuro); }
+
+    /* CONFIANZA */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .trust-card {
+      background: var(--blanco);
+      border: 1.5px solid var(--borde);
+      border-radius: var(--radio);
+      padding: 28px 24px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .trust-card:hover { box-shadow: var(--sombra); }
+    .trust-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .trust-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--negro); margin-bottom: 6px; }
+    .trust-card p { font-size: 0.825rem; color: var(--gris); }
+
+    /* CONTACTO */
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contacto-info h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+    .contacto-info p { font-size: 0.95rem; color: var(--gris); margin-bottom: 28px; }
+    .contacto-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: var(--blanco);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+      margin-bottom: 20px;
+      display: block;
+      text-align: center;
+    }
+    .contacto-wa:hover { background: var(--whatsapp-hover); }
+    .contacto-phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gris);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    form {
+      background: var(--gris-claro);
+      border-radius: var(--radio);
+      padding: 32px;
+      border: 1.5px solid var(--borde);
+    }
+    form h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; color: var(--negro); }
+    .form-group { margin-bottom: 16px; }
+    label {
+      display: block;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--gris-oscuro);
+      margin-bottom: 6px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--borde);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--negro);
+      background: var(--blanco);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--verde); }
+    textarea { resize: vertical; min-height: 90px; }
+    .btn-submit {
+      width: 100%;
+      background: var(--verde);
+      color: var(--blanco);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 13px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: #0f4a28; }
+
+    /* FOOTER */
+    footer {
+      background: var(--negro);
+      color: rgba(255,255,255,0.6);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-logo { font-size: 1.4rem; font-weight: 800; color: var(--blanco); margin-bottom: 8px; }
+    .footer-logo span { color: #86efac; }
+    footer p { font-size: 0.85rem; margin-bottom: 4px; }
+    .footer-links { margin-top: 16px; display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem; }
+    .footer-links a:hover { color: var(--blanco); }
+
+    /* WHATSAPP FLOTANTE */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--whatsapp);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      z-index: 200;
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .zona-grid, .contacto-grid, .catalogo-layout { grid-template-columns: 1fr; gap: 32px; }
+      .cart-panel { position: static; }
+      .oferta-banner { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Av<span>í</span>o</div>
+    <ul class="nav-links">
+      <li><a href="#packs">Packs</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#zona">Zona</a></li>
+      <li><a href="#contacto" class="nav-cta">📦 Pedir ahora</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🇪🇸 Ponteareas · O Porriño · Alrededores</div>
+    <h1>Consumibles para tu bar,<br /><em>sin complicaciones</em></h1>
+    <p>Servilletas, guantes, toallas y más — entregamos lo que necesita tu negocio. Rápido, local y con trato directo.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/34697279292?text=Hola%2C%20me%20interesa%20pedir%20consumibles%20para%20mi%20negocio." class="btn-wa">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <a href="#catalogo" class="btn-outline">Crear pack mensual →</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Entrega en tu zona
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Respuesta rápida
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Sin mínimos agresivos
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Trato directo
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS -->
+<section id="packs">
+  <div class="section-inner">
+    <div class="section-label">Nuestros packs</div>
+    <h2 class="section-title">Elige el que se adapta a tu negocio</h2>
+    <p class="section-sub">Precios orientativos. Si necesitas más cantidad o productos distintos, te preparamos una propuesta a medida por WhatsApp.</p>
+
+    <div class="packs-grid">
+
+      <!-- PACK BÁSICO -->
+      <div class="pack-card">
+        <div class="pack-icon">🧻</div>
+        <div class="pack-name">Pack Básico Bar</div>
+        <div class="pack-desc">Para reposición puntual de lo esencial. Ideal si ya tienes proveedor pero te falta algo o quieres probar.</div>
+        <ul class="pack-items">
+          <li>Servilletas de papel × 10 paquetes (100 ud c/u)</li>
+          <li>Guantes desechables × 2 cajas (100 ud c/u)</li>
+          <li>Paños de cocina × 5 uds</li>
+        </ul>
+        <div class="pack-price">
+          <span class="amount">25€</span>
+          <span class="suffix">precio orientativo · IVA no incl.</span>
+        </div>
+        <a href="https://wa.me/34697279292?text=Hola%2C%20quiero%20el%20Pack%20B%C3%A1sico%20Bar." class="btn-pack">Pedir este pack</a>
+      </div>
+
+      <!-- PACK MENSUAL (DESTACADO) -->
+      <div class="pack-card featured">
+        <div class="pack-badge">⭐ Más popular</div>
+        <div class="pack-icon">📦</div>
+        <div class="pack-name">Pack Reposición Mensual</div>
+        <div class="pack-desc">Para bares y cafeterías que quieren simplificar su reposición mensual sin pensar en ello cada semana.</div>
+        <ul class="pack-items">
+          <li>Servilletas de papel × 20 paquetes</li>
+          <li>Guantes desechables × 4 cajas</li>
+          <li>Paños de cocina × 10 uds</li>
+          <li>Papel de limpieza industrial × 2 rollos</li>
+          <li>Opción de entrega local bajo confirmación</li>
+        </ul>
+        <div class="pack-price">
+          <span class="amount">55€</span>
+          <span class="suffix">precio orientativo · IVA no incl.</span>
+        </div>
+        <a href="https://wa.me/34697279292?text=Hola%2C%20quiero%20el%20Pack%20Reposici%C3%B3n%20Mensual." class="btn-pack">Pedir este pack</a>
+      </div>
+
+      <!-- PACK A MEDIDA -->
+      <div class="pack-card">
+        <div class="pack-icon">✏️</div>
+        <div class="pack-name">Pack a Medida</div>
+        <div class="pack-desc">Dinos qué consumes en tu negocio cada mes y te preparamos una propuesta ajustada a tu ritmo y presupuesto.</div>
+        <ul class="pack-items">
+          <li>Cualquier combinación de productos</li>
+          <li>Cantidad adaptada a tu consumo</li>
+          <li>Presupuesto sin compromiso por WhatsApp</li>
+          <li>Periodicidad que elijas</li>
+        </ul>
+        <div class="pack-price">
+          <span class="desde">desde</span>
+          <span class="amount">20€</span>
+          <span class="suffix">según lo que necesites</span>
+        </div>
+        <a href="https://wa.me/34697279292?text=Hola%2C%20me%20gustar%C3%ADa%20un%20pack%20a%20medida%20para%20mi%20negocio." class="btn-pack">Pedir presupuesto</a>
+      </div>
+
+    </div>
+
+    <!-- OFERTA PRIMER PEDIDO -->
+    <div class="oferta-banner">
+      <div class="oferta-texto">
+        <h3>🎁 Oferta primer pedido</h3>
+        <p>Consigue un <strong>10% de descuento en tu primer pedido</strong> mencionando esta oferta al contactarnos. Sin compromisos de permanencia.</p>
+      </div>
+      <a href="https://wa.me/34697279292?text=Hola%2C%20quiero%20el%2010%25%20de%20descuento%20en%20mi%20primer%20pedido." class="btn-wa" style="white-space:nowrap; flex-shrink:0;">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quiero el descuento
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGO -->
+<section class="catalogo" id="catalogo">
+  <div class="section-inner">
+    <div class="section-label">Catálogo rápido</div>
+    <h2 class="section-title">Monta tu pedido o pack mensual</h2>
+    <p class="section-sub">Añade productos disponibles, ajusta cantidades y envíanos la solicitud por WhatsApp. Si marcas la opción mensual, lo tratamos como propuesta de reposición recurrente.</p>
+
+    <div class="catalogo-layout">
+      <div class="catalogo-grid" id="catalogoGrid"></div>
+
+      <aside class="cart-panel" aria-label="Carrito de solicitud">
+        <h3>Tu selección</h3>
+        <p class="cart-help">No pagas ahora. Esto prepara un mensaje de WhatsApp para revisar disponibilidad, cantidades y condiciones.</p>
+        <div class="cart-items" id="cartItems">
+          <div class="cart-empty">Añade productos del catálogo para preparar tu pack.</div>
+        </div>
+        <div class="cart-total">
+          <span>Total orientativo</span>
+          <strong id="cartTotal">0€</strong>
+        </div>
+        <div class="monthly-box">
+          <label>
+            <input type="checkbox" id="monthlyPack" />
+            <span>Convertir esta selección en pack personalizado mensual</span>
+          </label>
+        </div>
+        <button class="btn-cart" id="sendCartBtn" type="button" disabled>Enviar selección por WhatsApp</button>
+        <p class="cart-note">Precios orientativos, IVA no incluido y sujetos a disponibilidad. La propuesta final se confirma por WhatsApp.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
+  <div class="section-inner">
+    <div class="section-label">Proceso</div>
+    <h2 class="section-title">Tan fácil como escribir un mensaje</h2>
+    <p class="section-sub">Sin formularios complicados. Gestionamos tu consulta de forma directa y clara.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Dinos qué necesitas</h3>
+        <p>Escríbenos por WhatsApp o rellena el formulario. Cuéntanos qué productos y qué cantidad aproximada.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Te respondemos rápido</h3>
+        <p>Confirmamos disponibilidad, te damos precio final y acordamos la mejor opción para tu pedido. Sin sorpresas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Confirmas el pedido</h3>
+        <p>Cuando te cuadra, confirmas. Sin procesos complicados y con trato directo desde el primer mensaje.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Lo recibes en tu negocio</h3>
+        <p>Coordinamos la entrega o recogida según tu zona y las condiciones disponibles para ese pedido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONA -->
+<section id="zona">
+  <div class="section-inner">
+    <div class="zona-grid">
+      <div>
+        <div class="section-label">Zona de servicio</div>
+        <h2 class="section-title">Cerca de ti</h2>
+        <p style="color:var(--gris);font-size:0.95rem;margin-bottom:20px;">Operamos en Ponteareas, O Porriño y municipios cercanos. Si no estás seguro de si llegamos a tu zona, pregúntanos sin compromiso.</p>
+        <div class="zona-tags">
+          <span class="zona-tag">📍 Ponteareas</span>
+          <span class="zona-tag">📍 O Porriño</span>
+          <span class="zona-tag">📍 Salvaterra de Miño</span>
+          <span class="zona-tag">📍 As Neves</span>
+          <span class="zona-tag consulta">Otras zonas bajo consulta →</span>
+        </div>
+      </div>
+      <div class="zona-map">
+        <div class="map-icon">🗺️</div>
+        <p><strong style="color:var(--negro);">¿Estás cerca pero no ves tu localidad?</strong><br />Escríbenos y miramos si llegamos. Intentamos adaptarnos siempre que podemos.</p>
+        <br />
+        <a href="https://wa.me/34697279292?text=Hola%2C%20quiero%20saber%20si%20haceis%20entrega%20en%20mi%20zona." class="btn-wa" style="max-width:260px;margin:0 auto;">Consultar mi zona</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section style="background:var(--gris-claro);">
+  <div class="section-inner">
+    <div class="section-label">Por qué elegirnos</div>
+    <h2 class="section-title">Proveedor local, trato directo</h2>
+    <p class="section-sub">No somos un catálogo online. Somos dos personas de la zona que conocen lo que necesita un negocio local.</p>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="icon">⚡</div>
+        <h4>Respuesta rápida</h4>
+        <p>Te contestamos de forma directa. Sin formularios largos, sin colas y sin trato impersonal.</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon">📍</div>
+        <h4>Entrega local</h4>
+        <p>Trabajamos con foco en Ponteareas, O Porriño y alrededores para darte una respuesta cercana.</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon">🤝</div>
+        <h4>Trato directo</h4>
+        <p>Hablas con nosotros, no con un chatbot. Si hay algún problema, lo resolvemos rápido y sin burocracia.</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon">🔄</div>
+        <h4>Reposición flexible</h4>
+        <p>Pides cuando lo necesitas. Sin suscripciones obligatorias ni mínimos imposibles de cumplir al inicio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Hablamos ahora</h2>
+        <p>La forma más rápida es el WhatsApp. Cuéntanos qué necesita tu negocio y te respondemos con una propuesta clara.</p>
+        <a href="https://wa.me/34697279292?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20vuestros%20consumibles." class="contacto-wa">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <div class="contacto-phone">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          697 279 292
+        </div>
+      </div>
+
+      <form onsubmit="enviarFormulario(event)">
+        <h3>O cuéntanos qué necesitas</h3>
+        <div class="form-group">
+          <label for="negocio">Nombre de tu negocio</label>
+          <input type="text" id="negocio" placeholder="Bar El Rincón, Cafetería Mar..." required />
+        </div>
+        <div class="form-group">
+          <label for="localidad">Localidad</label>
+          <input type="text" id="localidad" placeholder="Ponteareas, O Porriño..." required />
+        </div>
+        <div class="form-group">
+          <label for="productos">¿Qué necesitas?</label>
+          <textarea id="productos" placeholder="Servilletas, guantes, toallas... y la cantidad aproximada si sabes." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Tu WhatsApp o teléfono</label>
+          <input type="tel" id="telefono" placeholder="6XX XXX XXX" required />
+        </div>
+        <button type="submit" class="btn-submit">Enviar consulta por WhatsApp →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Av<span>í</span>o</div>
+  <p>Consumibles profesionales para hostelería local</p>
+  <p style="margin-top:4px;">Ponteareas · O Porriño · Alrededores</p>
+  <div class="footer-links">
+    <a href="#packs">Packs</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#zona">Zona</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/34697279292">WhatsApp</a>
+  </div>
+  <p style="margin-top:24px;font-size:0.75rem;">© 2026 Avío · Precios orientativos, IVA no incluido · Sujetos a disponibilidad de stock</p>
+</footer>
+
+<!-- BOTÓN FLOTANTE WA -->
+<a href="https://wa.me/34697279292?text=Hola%2C%20quiero%20información%20sobre%20vuestros%20consumibles." class="wa-float" title="Escribir por WhatsApp">
+  <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const whatsappNumber = '34697279292';
+  const productosCatalogo = [
+    {
+      id: 'servilletas-1000',
+      nombre: 'Servilletas de papel',
+      descripcion: 'Paquete profesional para barra, comedor o terraza.',
+      unidad: 'pack 1.000 uds',
+      precio: 8,
+      categoria: 'Hostelería',
+      icono: '🧻'
+    },
+    {
+      id: 'guantes-nitrilo',
+      nombre: 'Guantes desechables',
+      descripcion: 'Caja para manipulación, limpieza o cocina.',
+      unidad: 'caja 100 uds',
+      precio: 7,
+      categoria: 'Higiene',
+      icono: '🧤'
+    },
+    {
+      id: 'panos-cocina',
+      nombre: 'Paños de cocina',
+      descripcion: 'Paños multiuso para trabajo diario en barra o cocina.',
+      unidad: 'pack 5 uds',
+      precio: 6,
+      categoria: 'Limpieza',
+      icono: '🧽'
+    },
+    {
+      id: 'papel-industrial',
+      nombre: 'Papel de limpieza industrial',
+      descripcion: 'Rollo de papel resistente para superficies y cocina.',
+      unidad: 'rollo',
+      precio: 10,
+      categoria: 'Limpieza',
+      icono: '📦'
+    },
+    {
+      id: 'toallas-hosteleria',
+      nombre: 'Toallas profesionales',
+      descripcion: 'Para baños, alojamientos pequeños o servicios especiales.',
+      unidad: 'unidad',
+      precio: 5,
+      categoria: 'Textil',
+      icono: '🧺'
+    },
+    {
+      id: 'albornoces',
+      nombre: 'Albornoces',
+      descripcion: 'Opción para alojamientos, spa o servicios premium.',
+      unidad: 'unidad',
+      precio: 18,
+      categoria: 'Textil',
+      icono: '♨️'
+    }
+  ];
+
+  const carrito = {};
+
+  function formatoEuros(valor) {
+    return `${valor.toLocaleString('es-ES')}€`;
+  }
+
+  function renderCatalogo() {
+    const grid = document.getElementById('catalogoGrid');
+    if (!grid) return;
+
+    grid.innerHTML = productosCatalogo.map((producto) => `
+      <article class="producto-card">
+        <div class="producto-top">
+          <div class="producto-icon" aria-hidden="true">${producto.icono}</div>
+          <span class="producto-tag">${producto.categoria}</span>
+        </div>
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <div class="producto-meta">
+          <span class="producto-precio">${formatoEuros(producto.precio)}</span>
+          <span class="producto-unidad">${producto.unidad}</span>
+        </div>
+        <div class="qty-row">
+          <button type="button" aria-label="Quitar ${producto.nombre}" onclick="cambiarCantidad('${producto.id}', -1)">−</button>
+          <input type="number" min="0" value="${carrito[producto.id] || 0}" aria-label="Cantidad de ${producto.nombre}" onchange="fijarCantidad('${producto.id}', this.value)" />
+          <button type="button" aria-label="Añadir ${producto.nombre}" onclick="cambiarCantidad('${producto.id}', 1)">+</button>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  function cambiarCantidad(id, delta) {
+    const actual = carrito[id] || 0;
+    const siguiente = Math.max(0, actual + delta);
+    if (siguiente === 0) {
+      delete carrito[id];
+    } else {
+      carrito[id] = siguiente;
+    }
+    renderCatalogo();
+    renderCarrito();
+  }
+
+  function fijarCantidad(id, valor) {
+    const cantidad = Math.max(0, Number.parseInt(valor, 10) || 0);
+    if (cantidad === 0) {
+      delete carrito[id];
+    } else {
+      carrito[id] = cantidad;
+    }
+    renderCatalogo();
+    renderCarrito();
+  }
+
+  function obtenerLineasCarrito() {
+    return Object.entries(carrito).map(([id, cantidad]) => {
+      const producto = productosCatalogo.find((item) => item.id === id);
+      return { ...producto, cantidad, subtotal: producto.precio * cantidad };
+    });
+  }
+
+  function renderCarrito() {
+    const contenedor = document.getElementById('cartItems');
+    const totalEl = document.getElementById('cartTotal');
+    const boton = document.getElementById('sendCartBtn');
+    if (!contenedor || !totalEl || !boton) return;
+
+    const lineas = obtenerLineasCarrito();
+    const total = lineas.reduce((sum, item) => sum + item.subtotal, 0);
+    totalEl.textContent = formatoEuros(total);
+    boton.disabled = lineas.length === 0;
+
+    if (lineas.length === 0) {
+      contenedor.innerHTML = '<div class="cart-empty">Añade productos del catálogo para preparar tu pack.</div>';
+      return;
+    }
+
+    contenedor.innerHTML = lineas.map((item) => `
+      <div class="cart-item">
+        <div class="cart-item-main">
+          <div>
+            <div class="cart-item-name">${item.nombre}</div>
+            <div class="producto-unidad">${item.unidad}</div>
+          </div>
+          <div class="cart-item-price">${formatoEuros(item.subtotal)}</div>
+        </div>
+        <div class="qty-inline">
+          <button type="button" aria-label="Quitar ${item.nombre}" onclick="cambiarCantidad('${item.id}', -1)">−</button>
+          <span>${item.cantidad}</span>
+          <button type="button" aria-label="Añadir ${item.nombre}" onclick="cambiarCantidad('${item.id}', 1)">+</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function enviarCarrito() {
+    const lineas = obtenerLineasCarrito();
+    if (lineas.length === 0) return;
+
+    const total = lineas.reduce((sum, item) => sum + item.subtotal, 0);
+    const mensual = document.getElementById('monthlyPack')?.checked;
+    const detalle = lineas
+      .map((item) => `- ${item.nombre}: ${item.cantidad} x ${item.unidad} (${formatoEuros(item.subtotal)} orientativo)`)
+      .join('\n');
+    const tipo = mensual ? 'pack personalizado mensual' : 'pedido personalizado';
+    const msg = `Hola, quiero preparar un ${tipo} con estos productos:\n\n${detalle}\n\nTotal orientativo: ${formatoEuros(total)} + IVA.\n\n¿Me confirmáis disponibilidad y propuesta final?`;
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function enviarFormulario(e) {
+    e.preventDefault();
+    const negocio = document.getElementById('negocio').value;
+    const localidad = document.getElementById('localidad').value;
+    const productos = document.getElementById('productos').value;
+    const telefono = document.getElementById('telefono').value;
+    const msg = `Hola, me gustaría información sobre consumibles para mi negocio.\n\n*Negocio:* ${negocio}\n*Localidad:* ${localidad}\n*Qué necesito:* ${productos}\n*Mi teléfono:* ${telefono}`;
+    window.open(`https://wa.me/34697279292?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  document.getElementById('sendCartBtn')?.addEventListener('click', enviarCarrito);
+  renderCatalogo();
+  renderCarrito();
+</script>
+
+</body>
+</html>
+
